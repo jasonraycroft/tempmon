@@ -70,7 +70,6 @@ def c(n):
 
 def main(screen):
     curses.start_color()
-    curses.use_default_colors()
     curses.init_color(1,c(255),c(0),c(0))
     curses.init_color(2,c(255),c(197),c(0))
     curses.init_color(3,c(255),c(240),c(0))
@@ -93,9 +92,9 @@ def main(screen):
         count += 1
         names, temps, rawdata, leftoverdata = getreadings()
         appendnewnames(names, ordered_list)
-        n = 0;
         screen.addstr(0,0,"uptime: " + str(count), INFO)
         screen.refresh()
+        n = 0;
         for name in ordered_list:
             n += 1
 
@@ -105,21 +104,20 @@ def main(screen):
                 COLOR = curses.color_pair(getColor(temp))
                 lsb = ord(rawdata[index][1])
 
-		if (n < 15):
-	            screen.addstr(n,0," "*25)
-        	    screen.addstr(n,0,name,COLOR)
+                if (n < 14):
+                    screen.addstr(n,0," "*25)
+                    screen.addstr(n,0,name,COLOR)
                     screen.addstr(n,18,str(temp),COLOR)
                     screen.addstr(n,26,'{:08b}'.format(lsb),COLOR)
-                    screen.addstr(n,35,str(getColor(temp)))
                 else:
-                    screen.addstr(15,0,"MORE SENSORS!")
+                    screen.addstr(14,0,"MORE SENSORS!", INFO)
 
             except ValueError:
-                if (n < 15):
-		    screen.addstr(n,0,name)
+                if (n < 14):
+                    screen.addstr(n,0,name)
                     screen.addstr(n,24, "!")
                 else:
-                    screen.addstr(15,0,"MORE SENSORS!")
+                    screen.addstr(14,0,"MORE SENSORS!", INFO)
 
             finally:
                 screen.refresh()
