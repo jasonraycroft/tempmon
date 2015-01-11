@@ -87,14 +87,15 @@ def main(screen):
     curses.init_pair(5,3,-1)
     curses.init_pair(6,2,-1)
     curses.init_pair(7,1,-1)
-    INFO = curses.color_pair(0)
+    curses.init_pair(8,-1,-1)
+    INFO = curses.color_pair(8)
     
     count = 0
     while 1:
         count += 1
         names, temps, rawdata, leftoverdata = getreadings()
         appendnewnames(names, ordered_list)
-        screen.addstr(0,0,"uptime: " + str(count))
+        screen.addstr(0,0,"uptime: " + str(count), INFO)
         screen.refresh()
         n = 0;
         for name in ordered_list:
