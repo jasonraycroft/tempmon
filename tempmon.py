@@ -78,9 +78,7 @@ def main(screen):
     curses.init_color(5,c(0),c(255),c(255))
     curses.init_color(6,c(0),c(160),c(255))
     curses.init_color(7,c(100),c(0),c(255))
-    curses.init_color(0,c(255),c(255),c(255))
     
-    curses.init_pair(0,-1,-1)
     curses.init_pair(1,7,-1)
     curses.init_pair(2,6,-1)
     curses.init_pair(3,5,-1)
@@ -88,8 +86,7 @@ def main(screen):
     curses.init_pair(5,3,-1)
     curses.init_pair(6,2,-1)
     curses.init_pair(7,1,-1)
-    curses.init_pair(8,0,-1)
-    INFO = curses.color_pair(8)
+    INFO = curses.color_pair(5)
     
     count = 0
     while 1:
