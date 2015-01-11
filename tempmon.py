@@ -70,6 +70,7 @@ def c(n):
 
 def main(screen):
     curses.start_color()
+    curses.use_default_colors()
     curses.init_color(1,c(255),c(0),c(0))
     curses.init_color(2,c(255),c(197),c(0))
     curses.init_color(3,c(255),c(240),c(0))
