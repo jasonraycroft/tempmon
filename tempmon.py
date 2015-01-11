@@ -101,7 +101,7 @@ def main(screen):
 
             try:
                 index = names.index(name)
-                temp = temps[index]-40+count*5+n
+                temp = temps[index]
                 COLOR = curses.color_pair(getColor(temp))
                 lsb = ord(rawdata[index][1])
 
