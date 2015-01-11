@@ -86,7 +86,7 @@ def main(screen):
     curses.init_pair(5,3,-1)
     curses.init_pair(6,2,-1)
     curses.init_pair(7,1,-1)
-    INFO = curses.color_pair(5)
+    INFO = curses.color_pair(3)
     
     count = 0
     while 1:
