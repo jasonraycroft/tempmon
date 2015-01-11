@@ -94,7 +94,7 @@ def main(screen):
         count += 1
         names, temps, rawdata, leftoverdata = getreadings()
         appendnewnames(names, ordered_list)
-        screen.addstr(0,0,"uptime: " + str(count), INFO)
+        screen.addstr(0,0,"uptime: " + str(count))
         screen.refresh()
         n = 0;
         for name in ordered_list:
